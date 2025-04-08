@@ -254,6 +254,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
+    private long lastExitPressedTimeMs = 0L;
+    private static final long DOUBLE_PRESS_EXIT_THRESHOLD_MS = 1000L;
+
     @Override
     public void onBackPressed() {
         if (mCurrentFragment != null) {
@@ -263,7 +266,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (mDrawer.isDrawerOpen(Gravity.START)) {
             mDrawer.closeDrawer(Gravity.START);
         } else {
-            super.onBackPressed();
+            final long nowTime = System.currentTimeMillis();
+            if (lastExitPressedTimeMs > 0L && nowTime - lastExitPressedTimeMs <= DOUBLE_PRESS_EXIT_THRESHOLD_MS) {
+                super.onBackPressed();
+            } else {
+                lastExitPressedTimeMs = nowTime;
+                Toast.makeText(this, R.string.double_press_to_exit, Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

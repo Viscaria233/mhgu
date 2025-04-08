@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">MHGU资料</string>
+    <string name="double_press_to_exit">双击返回键退出</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
