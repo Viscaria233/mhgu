@@ -3,6 +3,7 @@ package cn.jestar.mhgu.search;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.graphics.Bitmap;
+import android.text.TextUtils;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -131,7 +132,9 @@ public class WebViewManager implements WebView.FindListener {
      */
     public void search(String text) {
         mView.clearMatches();
-        mView.findAllAsync(text);
+        if (!TextUtils.isEmpty(text)) {
+            mView.findAllAsync(text);
+        }
     }
 
     /**
