@@ -89,6 +89,7 @@ public class EquipFragment extends BaseEquipFragment {
         initParts(group);
         initTags(group);
         initRecycle(group);
+        queryEquip();
     }
 
     private void setSkillVisible(boolean queryBySkill) {
