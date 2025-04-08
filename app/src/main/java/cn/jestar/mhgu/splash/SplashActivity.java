@@ -18,7 +18,7 @@ import cn.jestar.mhgu.R;
 
 public class SplashActivity extends AppCompatActivity {
     private long mStartTime;
-    private long mDuration = 1500;
+    private long mDuration = 500;
     private View mView;
 
     @Override
