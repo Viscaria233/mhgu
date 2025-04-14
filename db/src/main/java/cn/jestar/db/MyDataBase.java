@@ -23,7 +23,7 @@ import cn.jestar.db.bean.SkillEffect;
                 EquipSkill.class, SingleSkillEquip.class, Equip.class},
         version = DbConstants.VERSION, exportSchema = false)
 public abstract class MyDataBase extends RoomDatabase {
-    private static MyDataBase INSTANCE;
+    private static volatile MyDataBase INSTANCE;
 
 
     public static MyDataBase getInstance() {

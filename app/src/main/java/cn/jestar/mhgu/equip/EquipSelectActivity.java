@@ -300,7 +300,7 @@ public class EquipSelectActivity extends AppCompatActivity implements OnSelectEv
         mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                if (mCurrentFrg == null || mCurrentFrg.isHidden()) {
+                if (mCurrentFrg != null && !mCurrentFrg.isHidden()) {
                     hideFrg();
                 }
                 int itemId = item.getItemId();
