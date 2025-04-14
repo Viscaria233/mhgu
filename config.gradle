@@ -2,8 +2,8 @@ ext {
     //版本
     minSdk = 21
     targetSdk = 27
-    vCode = 220
-    vName = '2.2.0'
+    vCode = 221
+    vName = '2.2.1'
     supportV = "27.1.1"
     architectureV = "1.1.1"
     //android支持库
